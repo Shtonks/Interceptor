@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+//import Interceptor.ICustRequestInter;
+//import Interceptor.ICustomerRentalRequest;
 
+//public class Customer implements ICustRequestInter {
 public class Customer {
 
     private String _name;
@@ -60,4 +63,10 @@ public class Customer {
 
         return result;
     }
+
+    // @Override
+    // public void onLogRequest(ICustomerRentalRequest context) {
+    //     // TODO Auto-generated method stub
+        
+    // }
 }
