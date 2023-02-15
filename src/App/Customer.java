@@ -1,9 +1,8 @@
+package App;
 import java.util.ArrayList;
 import java.util.List;
-//import Interceptor.ICustRequestInter;
-//import Interceptor.ICustomerRentalRequest;
+import Interceptor.CustRequestDisp;
 
-//public class Customer implements ICustRequestInter {
 public class Customer {
 
     private String _name;
@@ -15,6 +14,13 @@ public class Customer {
 
     public void addRental(Rental arg) {
         _rentals.add(arg);
+        // Calling the log request using singleton Disp., passing the Rental obj (context object)
+        CustRequestDisp.getInstance().dispatchCustRentLogRequest(arg);
+    }
+
+    public void returnRental(Rental arg) {
+        _rentals.remove(arg);
+        CustRequestDisp.getInstance().dispatchCustReturnLogRequest(arg);
     }
 
     public String getName() {

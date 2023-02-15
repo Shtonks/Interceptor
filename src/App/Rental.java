@@ -1,7 +1,13 @@
+package App;
+
+import Interceptor.IRentalContObj;
+
+// This is a context object
+
 /**
  * The rental class represents a customer renting a movie.
  */
-public class Rental {
+public class Rental implements IRentalContObj{
 
     private Movie _movie;
     private int _daysRented;
