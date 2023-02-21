@@ -1,13 +1,9 @@
 package App;
 
-import Interceptor.IRentalContObj;
-
-// This is a context object
-
 /**
  * The rental class represents a customer renting a movie.
  */
-public class Rental implements IRentalContObj{
+public class Rental {
 
     private Movie _movie;
     private int _daysRented;
@@ -23,5 +19,13 @@ public class Rental implements IRentalContObj{
 
     public Movie getMovie() {
         return _movie;
+    }
+
+    double getCharge() {
+        return _movie.getCharge(_daysRented);
+    }
+
+    int getFreqRenterPoints() {
+        return _movie.getFreqRenterPoints(_daysRented);
     }
 }
