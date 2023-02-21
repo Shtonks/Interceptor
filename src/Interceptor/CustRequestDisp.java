@@ -1,7 +1,6 @@
 package Interceptor;
 
 import java.util.Vector;
-import App.Rental;
 
 // This class is uses a singleton pattern and is the subject of an observer pattern
 
@@ -28,15 +27,15 @@ public class CustRequestDisp{
         interceptors.removeElement(i);
     }
 
-    public void dispatchCustRentLogRequest(Rental r) {
+    public void dispatchCustRentLogRequest(ContextObj ctxObj) {
         for(ICustRequestInter ic: interceptors) {
-            ic.onCustRentLogRequest(r);
+            ic.onCustRentLogRequest(ctxObj);
         }
     }
 
-    public void dispatchCustReturnLogRequest(Rental r) {
+    public void dispatchCustReturnLogRequest(ContextObj ctxObj) {
         for(ICustRequestInter ic: interceptors) {
-            ic.onCustReturnLogRequest(r);
+            ic.onCustReturnLogRequest(ctxObj);
         }
     }
 }

@@ -2,6 +2,8 @@ package App;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Interceptor.ContextObj;
 import Interceptor.CustRequestDisp;
 
 public class Customer {
@@ -15,14 +17,16 @@ public class Customer {
 
     public void addRental(Rental arg) {
         _rentals.add(arg);
-        // Calling the log request using singleton Disp., passing the Rental obj
-        // (context object)
-        // CustRequestDisp.getInstance().dispatchCustRentLogRequest(arg);
+        // Creating a context obj to pass to the dispatcher
+        ContextObj contextObj = new ContextObj(this, arg);
+        // Calling the log request using singleton Disp. and passing the Context Obj
+        CustRequestDisp.getInstance().dispatchCustRentLogRequest(contextObj);
     }
 
     public void returnRental(Rental arg) {
         _rentals.remove(arg);
-        CustRequestDisp.getInstance().dispatchCustReturnLogRequest(arg);
+        ContextObj contextObj = new ContextObj(this, arg);
+        CustRequestDisp.getInstance().dispatchCustReturnLogRequest(contextObj);
     }
 
     public String getName() {
@@ -70,7 +74,7 @@ public class Customer {
         return result;
     }
 
-    private double getTotalFreqRenterPoints() {
+    public double getTotalFreqRenterPoints() {
         double result = 0;
 
         for (Rental each : _rentals) {

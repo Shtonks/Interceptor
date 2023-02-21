@@ -4,6 +4,6 @@ package Interceptor;
 
 // Customer Request Interceptor interface
 public interface ICustRequestInter {
-    public void onCustRentLogRequest(IRentalContObj rentCtx);
-    public void onCustReturnLogRequest(IRentalContObj rentCtx);
+    public void onCustRentLogRequest(IContextObj ctxObj);
+    public void onCustReturnLogRequest(IContextObj ctxObj);
 }
