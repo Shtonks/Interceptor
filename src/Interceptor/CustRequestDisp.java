@@ -18,7 +18,7 @@ public class CustRequestDisp{
         return instance;
     }
 
-    // Observer pattern
+    // Observer pattern elements
     public void registerICustRequestInter(ICustRequestInter i) {
         interceptors.addElement(i);
     }

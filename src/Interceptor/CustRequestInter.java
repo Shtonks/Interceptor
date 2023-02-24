@@ -9,7 +9,7 @@ public class CustRequestInter implements ICustRequestInter {
         System.out.println("Logged: Movie rented by " + ctxObj.getCustomerName());
         System.out.println("Movie: " + ctxObj.getMovieTitle() + 
                             "\nPrice: €" + ctxObj.getMoviePrice() +
-                            "\nDays to be rented for: " + ctxObj.getDaysRented() + "\n");
+                            "\nDays to be rented for: " + ctxObj.getDaysRented());
     }
 
     @Override
