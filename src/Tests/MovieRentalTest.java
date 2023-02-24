@@ -1,10 +1,16 @@
-package App;
+package Tests;
 
-import Interceptor.CustRequestInter;
+import org.junit.Test;
+
+import App.Customer;
+import App.Movie;
+import App.Rental;
 import Interceptor.CustRequestDisp;
+import Interceptor.CustRequestInter;
 
-public class Application {
-    public static void main(String[] args) throws Exception {
+public class MovieRentalTest {
+    @Test
+    public void interceptorTest() {
         // Creating an customer rental logging request specific intercepter and adding to the same specific dispatcher (observer pattern)
         CustRequestInter myInter = new CustRequestInter();
         CustRequestDisp.getInstance().registerICustRequestInter(myInter);
